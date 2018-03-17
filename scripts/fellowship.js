@@ -62,6 +62,7 @@ let makeHobbits = () => {
     //to add text to a li
     hobbit.append(document.createTextNode(hobbits[i]));
     hobbit.className = ('hobbit');
+    hobbit.setAttribute('id', hobbits[i]);
     i++
   }
 }
@@ -105,7 +106,6 @@ let forgeTheFellowShip = () => {
   let list = document.createElement('ul');
   fellowship.appendChild(list);
   let i=0;
-  let end=halfling.length
   while (i<halfling.length) {
     list.appendChild(halfling[0]);
     // congrats(halfling[0].innerText);
@@ -133,9 +133,44 @@ let theBalrog = () => {
 
 
 
+let hornOfGondor = () => {
+  let boromir = document.getElementById('Boromir');
+  alert("The Horn of Gondor has been blown!")
+  boromir.innerHTML = '<del>"Boromir"<del>';
+  boromir.remove();
+}
 
+let itsDangerousToGoAlone = () => {
+  let mordor = document.getElementsByClassName('Mordor');
+  let frodo = document.getElementById("Frodo Baggins");
+  let sam = document.getElementById('Samwise \'Sam\' Gamgee')
+  mordor[0].appendChild(frodo);
+  mordor[0].appendChild(sam);
+  let mountDoom = document.createElement('div');
+  mountDoom.setAttribute('id', 'mount-doom');
+  mordor[0].appendChild(mountDoom);
+}
 
+let weWantsIt = () => {
+  let mordor = document.getElementsByClassName('Mordor');
+  let smeagol = document.createElement('div');
+  smeagol.setAttribute('id', 'gollum');
+  mordor[0].appendChild(smeagol);
+  let ring = document.getElementById('the-ring');
+  smeagol.appendChild(ring);
+  let mountDoom = document.getElementById('mount-doom');
+  mountDoom.appendChild(smeagol);
+}
 
+let thereAndBackAgain = () => {
+  let smeagol = document.getElementById('gollum');
+  smeagol.remove();
+  let i=0;
+  while (i<halfling.length) {
+    hobbiton[0].appendChild(halfling[i]);
+    i++;
+  }
+}
 
 
 
@@ -146,3 +181,7 @@ makeBuddies();
 beautifulStranger();
 forgeTheFellowShip();
 theBalrog();
+hornOfGondor();
+itsDangerousToGoAlone();
+weWantsIt();
+thereAndBackAgain();
