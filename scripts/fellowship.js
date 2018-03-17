@@ -46,7 +46,7 @@ let makeMiddleEarth = () => {
   }
 }
 
-makeMiddleEarth();
+
 
 let hobbiton = document.getElementsByClassName('The Shire');
 
@@ -87,28 +87,62 @@ let makeBuddies = () => {
     let fellow = document.createElement('li');
     aside.appendChild(fellow);
     fellow.innerHTML = buddies[i];
+    fellow.className = "buddy"
+    fellow.setAttribute('id', buddies[i]);
     i++;
   }
 }
 
+buddy = document.getElementsByClassName('buddy')
 
+let beautifulStranger = () => {
+  buddy[3].innerText = "Aragorn";
+}
+
+let forgeTheFellowShip = () => {
+  let fellowship = document.createElement('div');
+  rivendell[0].appendChild(fellowship);
+  let list = document.createElement('ul');
+  fellowship.appendChild(list);
+  let i=0;
+  let end=halfling.length
+  while (i<halfling.length) {
+    list.appendChild(halfling[0]);
+    // congrats(halfling[0].innerText);
+    i++;
+  }
+
+  let k=0;
+  while (k<buddy.length) {
+    list.appendChild(buddy[0]);
+    // congrats(buddy[0].innerText);
+    k++;
+  }
+}
+
+
+let congrats = (str) => {
+  alert(str + " has joined your party!");
+}
+
+// const gandalf = document.getElementById('Gandalf the Grey');
+
+let theBalrog = () => {
+  buddy[0].innerText = 'Gandalf the White';
+}
+
+
+
+
+
+
+
+
+
+makeMiddleEarth();
 makeHobbits();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 keepItSecretKeepItSafe();
-
 makeBuddies();
+beautifulStranger();
+forgeTheFellowShip();
+theBalrog();
